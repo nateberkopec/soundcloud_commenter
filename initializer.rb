@@ -11,6 +11,7 @@ require 'soundcloud'
 require 'yaml'
 require 'securerandom'
 require 'literate_randomizer'
+require 'distribution'
 require './soundcloud_commenter'
 
 Twitter.configure do |config|
