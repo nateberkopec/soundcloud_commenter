@@ -49,7 +49,7 @@ class SoundcloudCommenter
   end
 
   def generate_comment
-    case SecureRandom.random_number(5)
+    case SecureRandom.random_number(7)
     when 0..4
       puts 'mark'
       mark_comment
