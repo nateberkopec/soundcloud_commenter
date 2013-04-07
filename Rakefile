@@ -61,7 +61,7 @@ task :tweet => :environment do
   dictionaries = %w(trap hot seapunk)
   commenter = SoundcloudCommenter.new("dictionaries/#{dictionaries.sample}.txt")
   if Time.now.hour % 3 == 0 
-    Twitter.update(sc.generate_comment)
+    Twitter.update(commenter.generate_comment)
   end
 end
 
