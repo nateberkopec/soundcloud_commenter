@@ -14,9 +14,9 @@ class SoundcloudCommenter
     @mark
   end
 
-  def mark_comment(opts = {})
+  def mark_comment
     cmt = mark.generate_n_words(rand_length)
-    if opts[:match]
+    if cmt.split(' ').length <= 3
       cmt
     else
       in_dictionary?(cmt) ? mark_comment : cmt
@@ -50,18 +50,15 @@ class SoundcloudCommenter
 
   def generate_comment
     case SecureRandom.random_number(5)
-    when 0
+    when 0..4
       puts 'mark'
       mark_comment
-    when 1
+    when 5
       puts 'literate'
       literate_comment
-    when 2
+    when 6
       puts 'gabbler'
       gabbler_comment
-    when 3..5
-      puts 'mark dictmatch OK'
-      mark_comment(:match => true)
     end
   end
 
