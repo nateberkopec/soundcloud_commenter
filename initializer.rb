@@ -7,8 +7,11 @@ Dotenv.load
 require 'marky_markov'
 require 'twitter'
 require 'gabbler'
+require 'soundcloud'
 require 'yaml'
 require 'securerandom'
+require 'literate_randomizer'
+require './soundcloud_commenter'
 
 Twitter.configure do |config|
   config.consumer_key = ENV['TWITTER_CONSUMER_KEY']
