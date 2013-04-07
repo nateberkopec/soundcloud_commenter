@@ -22,10 +22,10 @@ task :dictbuild_hot => :environment do
 end
 
 task :tweet => :environment do
-  emmett = Emmett.new
-  #if Time.now.hour % 3 == 0 
-    Twitter.update(emmett.generate_tweet)
-  #end
+  commenter = SoundcloudCommenter.new
+  if Time.now.hour % 3 == 0 
+    Twitter.update(sc.generate_comment)
+  end
 end
 
 desc "Open an irb session preloaded with emmetty goodness"
